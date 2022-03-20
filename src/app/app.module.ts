@@ -8,6 +8,8 @@ import { MainComponent } from './layouts/main/main.component';
 import { ContainerComponent } from './layouts/main/container/container.component';
 import { LeftPanelComponent } from './layouts/main/left-panel/left-panel.component';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
+import { UppercaseFirstLetterPipe } from './pipes/uppercase-first-letter.pipe';
+import { RatingPipe } from './pipes/rating.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { RecipeListComponent } from './components/recipe-list/recipe-list.compon
     ContainerComponent,
     LeftPanelComponent,
     RecipeListComponent,
+    UppercaseFirstLetterPipe,
+    RatingPipe,
   ],
   imports: [BrowserModule, HttpClientModule],
   providers: [],
