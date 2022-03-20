@@ -1,0 +1,72 @@
+:host {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 20px;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(blue, royalblue);
+  animation: rotateSpinner 1s ease-in-out infinite;
+  z-index: 10;
+}
+
+.tile {
+  position: relative;
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  outline-style: none;
+  border-style: none;
+  border-radius: 0 10px 0 0;
+  background-color: #f5ab2c;
+  transition: 0.2s;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-style: solid;
+    border-width: 50px 20px 0 0;
+    border-color: #a86b00 transparent transparent transparent;
+  }
+
+  &:hover {
+    background-color: darken(#f5ab2c, 10%);
+    box-shadow: 0 0 20px 0 #335679;
+    transform: scale(1.05);
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #fff;
+  }
+}
+
+@keyframes rotateSpinner {
+  0% {
+    transform: perspective(150px) translateX(-50%) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(150px) translateX(-50%) rotateX(-180deg)
+      rotateY(0deg);
+  }
+  100% {
+    transform: perspective(150px) translateX(-50%) rotateX(-180deg)
+      rotateY(-180deg);
+  }
+}
