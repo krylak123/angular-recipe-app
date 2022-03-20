@@ -1,0 +1,10 @@
+:host {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 10px 10px 0 #42445a;
+  background-color: #eff7ff9f;
+  backdrop-filter: blur(10px);
+}
