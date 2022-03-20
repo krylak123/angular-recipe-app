@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  text-align: center;
+  background: linear-gradient(90deg, #b1d8ff, #c7e3ff, #b1d8ff);
+  box-shadow: 0 0 50px 0 #42445a;
+  z-index: 10;
+}
+
+.title {
+  position: relative;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 50px #fff;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -12vw;
+    width: 10vw;
+    height: 1px;
+    background-color: #000;
+    transform: translateY(-50%);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -12vw;
+    width: 10vw;
+    height: 1px;
+    background-color: #000;
+    transform: translateY(-50%);
+  }
+}
