@@ -1,6 +1,6 @@
 <div class="spinner" *ngIf="!recipesList.length"></div>
 
-<button type="button" class="tile">
-  <p class="tile__text">recipe name</p>
-  <p class="tile__text">recipe rating</p>
+<button type="button" class="tile" *ngFor="let recipe of recipesList">
+  <p class="tile__text">{{ recipe.name }}</p>
+  <p class="tile__text">Ocena: {{ recipe.rating }}</p>
 </button>

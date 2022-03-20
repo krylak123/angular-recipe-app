@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeApiService } from 'src/app/services/recipe-api.service';
 
 export interface Recipe {
   name: string;
@@ -21,7 +22,13 @@ interface Ingredient {
 export class RecipeListComponent implements OnInit {
   public recipesList: Recipe[] = [];
 
-  constructor() {}
+  constructor(private recipeApiService: RecipeApiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.recipeApiService
+      .getRecipes()
+      .subscribe(
+        (result) => (this.recipesList = [...result, ...result, ...result])
+      );
+  }
 }
