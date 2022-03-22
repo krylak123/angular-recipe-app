@@ -3,5 +3,14 @@
 </app-container>
 
 <app-container class="formPanel">
-  <app-recipe-form></app-recipe-form>
+  <nav class="menu">
+    <li class="menu__item">
+      <a class="menu__link" routerLink="form" routerLinkActive="menu__link--active">Dodaj Przepis</a>
+    </li>
+    <li class="menu__item">
+      <a class="menu__link" routerLink="1/details" routerLinkActive="menu__link--active">Szczegóły</a>
+    </li>
+  </nav>
+
+  <router-outlet></router-outlet>
 </app-container>

@@ -1,6 +1,6 @@
 <div class="spinner" *ngIf="!recipesList.length"></div>
 
-<button type="button" class="tile" *ngFor="let recipe of recipesList">
+<button type="button" class="tile" *ngFor="let recipe of recipesList" [routerLink]="[recipe.id, 'details']">
   <p class="tile__text">{{ recipe.name | uppercaseFirstLetter }}</p>
   <p class="tile__text">Ocena:</p>
   <p class="tile__rating">{{ recipe.rating | rating}}</p>
