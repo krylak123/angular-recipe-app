@@ -9,3 +9,9 @@
   background-size: cover;
   /** background by SVGBackgrounds.com */
 }
+
+.formPanel {
+  position: sticky;
+  top: 30px;
+  align-self: flex-start;
+}

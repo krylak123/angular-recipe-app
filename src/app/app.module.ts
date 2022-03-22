@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { MainComponent } from './layouts/main/main.component';
 import { ContainerComponent } from './layouts/main/container/container.component';
-import { LeftPanelComponent } from './layouts/main/left-panel/left-panel.component';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { UppercaseFirstLetterPipe } from './pipes/uppercase-first-letter.pipe';
 import { RatingPipe } from './pipes/rating.pipe';
+import { RecipeFormComponent } from './components/recipe-form/recipe-form.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,12 @@ import { RatingPipe } from './pipes/rating.pipe';
     HeaderComponent,
     MainComponent,
     ContainerComponent,
-    LeftPanelComponent,
     RecipeListComponent,
     UppercaseFirstLetterPipe,
     RatingPipe,
+    RecipeFormComponent,
   ],
-  imports: [BrowserModule, HttpClientModule],
+  imports: [BrowserModule, HttpClientModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
