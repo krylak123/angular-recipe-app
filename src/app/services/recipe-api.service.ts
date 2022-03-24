@@ -11,4 +11,8 @@ export class RecipeApiService {
   public getRecipes() {
     return this.http.get<Recipe[]>('http://localhost:3000/recipes');
   }
+
+  public getRecipe(id: string) {
+    return this.http.get<Recipe>(`http://localhost:3000/recipes/${id}`);
+  }
 }
