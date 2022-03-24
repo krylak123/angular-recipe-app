@@ -5,11 +5,20 @@
   <p class="header__rating">{{ recipe.rating | rating }}</p>
 </header>
 <main class="content" *ngIf="recipe">
-  <section class="content__description"></section>
+  <section class="content__description">
+    <ul class="list">
+      <li
+        class="list__element list__element--desc"
+        *ngFor="let desc of recipe.description"
+      >
+        {{ desc }}
+      </li>
+    </ul>
+  </section>
   <section class="content__ingredient">
     <ul class="list">
-      <li class="list__element" *ngFor="let item of recipe.ingriedients">
-        {{ item.name }} - {{ item.value }}
+      <li class="list__element" *ngFor="let ingrd of recipe.ingriedients">
+        {{ ingrd.name }} - {{ ingrd.value }}
       </li>
     </ul>
   </section>
