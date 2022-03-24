@@ -1,2 +1,10 @@
-<h1>details of {{ recipeID }}</h1>
-<h2>name: {{ recipe?.name }}</h2>
+<app-loader *ngIf="!recipe"></app-loader>
+
+<header class="header">
+  <h1 class="header__name">{{ recipe?.name }}</h1>
+  <p class="header__rating">{{ recipe.rating | rating }}</p>
+</header>
+<main class="content">
+  <section class="content__description"></section>
+  <section class="content__ingredient"></section>
+</main>

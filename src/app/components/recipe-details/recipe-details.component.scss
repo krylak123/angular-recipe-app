@@ -1,3 +1,18 @@
 :host {
   flex-grow: 1;
+  min-height: 300px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__name {
+    font-size: 2.5rem;
+  }
+
+  &__rating {
+    font-size: 2rem;
+  }
 }

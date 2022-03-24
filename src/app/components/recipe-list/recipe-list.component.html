@@ -4,7 +4,7 @@
   type="button"
   class="tile"
   *ngFor="let recipe of recipesList"
-  [routerLink]="[recipe.id, 'details']"
+  [routerLink]="['details', recipe.id]"
 >
   <p class="tile__text">{{ recipe.name | uppercaseFirstLetter }}</p>
   <p class="tile__text">Ocena:</p>
