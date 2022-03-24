@@ -15,6 +15,7 @@ import { UppercaseFirstLetterPipe } from './pipes/uppercase-first-letter.pipe';
 import { RatingPipe } from './pipes/rating.pipe';
 import { RecipeFormComponent } from './components/recipe-form/recipe-form.component';
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { RecipeDetailsComponent } from './components/recipe-details/recipe-detai
     RatingPipe,
     RecipeFormComponent,
     RecipeDetailsComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

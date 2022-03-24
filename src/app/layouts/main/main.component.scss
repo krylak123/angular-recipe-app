@@ -41,4 +41,13 @@
       background-color: #fff;
     }
   }
+
+  @media screen and (max-width: 1024px) {
+    margin: 2vh 5vh 0;
+
+    &__link {
+      padding: 10px 15px;
+      font-size: 1.5rem;
+    }
+  }
 }

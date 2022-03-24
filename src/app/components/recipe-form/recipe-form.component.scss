@@ -76,4 +76,27 @@
     display: flex;
     margin-bottom: 10px;
   }
+
+  @media screen and (max-width: 1024px) {
+    padding: 2vh 5vh;
+
+    &__input,
+    &__textarea {
+      padding: 8px;
+      font-size: 1.5rem;
+    }
+
+    &__textarea {
+      height: 150px;
+    }
+
+    &__btn {
+      padding: 8px 20px;
+      font-size: 1.2rem;
+
+      &--submit {
+        margin-top: 20px;
+      }
+    }
+  }
 }
