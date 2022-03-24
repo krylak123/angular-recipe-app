@@ -1,10 +1,16 @@
 <app-loader *ngIf="!recipe"></app-loader>
 
-<header class="header">
-  <h1 class="header__name">{{ recipe?.name }}</h1>
+<header class="header" *ngIf="recipe">
+  <h1 class="header__name">{{ recipe.name | uppercaseFirstLetter }}</h1>
   <p class="header__rating">{{ recipe.rating | rating }}</p>
 </header>
-<main class="content">
+<main class="content" *ngIf="recipe">
   <section class="content__description"></section>
-  <section class="content__ingredient"></section>
+  <section class="content__ingredient">
+    <ul class="list">
+      <li class="list__element" *ngFor="let item of recipe.ingriedients">
+        {{ item.name }} - {{ item.value }}
+      </li>
+    </ul>
+  </section>
 </main>

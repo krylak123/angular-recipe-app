@@ -1,12 +1,14 @@
 :host {
   flex-grow: 1;
-  min-height: 300px;
+  margin: 20px 0;
+  min-height: 100px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 
   &__name {
     font-size: 2.5rem;
@@ -14,5 +16,35 @@
 
   &__rating {
     font-size: 2rem;
+  }
+}
+
+.content {
+  display: flex;
+
+  &__description,
+  &__ingredient {
+    flex-basis: 50%;
+  }
+}
+
+.list {
+  list-style: none;
+
+  &__element {
+    padding: 10px 5px 10px 20px;
+    font-size: 1.5rem;
+    transition: 0.2s;
+    background-color: #f0f0f0;
+
+    &::before {
+      content: ">";
+      font-weight: bold;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: #d3d3d3;
+    }
   }
 }
