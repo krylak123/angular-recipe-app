@@ -6,7 +6,7 @@ export interface Recipe {
   id: number;
   description: string[];
   rating: number;
-  ingredients: Ingredient[];
+  ingriedients: Ingredient[];
 }
 
 interface Ingredient {
