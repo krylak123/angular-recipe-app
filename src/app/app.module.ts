@@ -16,6 +16,7 @@ import { RatingPipe } from './pipes/rating.pipe';
 import { RecipeFormComponent } from './components/recipe-form/recipe-form.component';
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { SearchSortFormComponent } from './components/search-sort-form/search-sort-form.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LoaderComponent } from './components/loader/loader.component';
     RecipeFormComponent,
     RecipeDetailsComponent,
     LoaderComponent,
+    SearchSortFormComponent,
   ],
   imports: [
     BrowserModule,

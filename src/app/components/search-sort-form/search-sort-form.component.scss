@@ -1,0 +1,41 @@
+%input {
+  padding: 10px;
+  width: 100%;
+  font-size: 1.8rem;
+  outline-style: none;
+  border-style: none;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+:host {
+  margin: 20px 0 50px;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+
+  &__label {
+    width: 50%;
+  }
+
+  &__input {
+    @extend %input;
+
+    &:hover,
+    &:focus {
+      box-shadow: inset 0 0 5px 1px #4169e1;
+    }
+  }
+
+  &__select {
+    @extend %input;
+    padding-right: 50px;
+    width: auto;
+
+    &:hover {
+      box-shadow: inset 0 0 5px 1px #4169e1;
+    }
+  }
+}
