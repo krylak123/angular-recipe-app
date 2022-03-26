@@ -8,6 +8,7 @@ import { RecipeFormService } from 'src/app/services/recipe-form.service';
   styleUrls: ['./recipe-form.component.scss'],
 })
 export class RecipeFormComponent implements OnInit {
+  public isModalOpen: boolean = false;
   public form!: FormGroup;
 
   get ingredientsFormArray() {
@@ -40,11 +41,21 @@ export class RecipeFormComponent implements OnInit {
     array.removeAt(index);
   }
 
+  public handleOnOpenModal() {
+    if (this.form.invalid) {
+      console.error('niepoprawny formualarz');
+      return;
+    }
+
+    this.isModalOpen = true;
+  }
+
   public handleOnSubmit() {
     this.form.markAllAsTouched();
+    this.isModalOpen = false;
 
     if (this.form.invalid) {
-      console.error('niepoprawny formualrz');
+      console.error('niepoprawny formualarz');
       return;
     }
 

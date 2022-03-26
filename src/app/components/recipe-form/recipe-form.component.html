@@ -25,5 +25,13 @@
     </div>
   </div>
 
-  <button class="form__btn form__btn--submit" type="submit">Dodaj przepis</button>
+  <button class="form__btn form__btn--submit" type="button" (click)="handleOnOpenModal()">Dodaj przepis</button>
+
+  <dialog class="form__modal-container" [open]="isModalOpen">
+    <div class="form__modal">
+      <h1 class="form__title">Oceń przepis</h1>
+      <div class="form__rating"></div>
+      <button class="form__btn form__btn--submit" type="submit">Dodaj przepis</button>
+    </div>
+  </dialog>
 </form>
