@@ -11,21 +11,21 @@ export class RecipeFormService {
     const form = this.formBuild.group({
       name: this.formBuild.control('', [
         Validators.required,
-        Validators.min(3),
+        Validators.minLength(3),
       ]),
       description: this.formBuild.control('', [
         Validators.required,
-        Validators.min(10),
+        Validators.minLength(10),
       ]),
       ingredients: this.formBuild.array([
         this.formBuild.group({
           nameOfIngredient: this.formBuild.control('', [
             Validators.required,
-            Validators.min(3),
+            Validators.minLength(3),
           ]),
           amountOfIngredient: this.formBuild.control('', [
             Validators.required,
-            Validators.min(2),
+            Validators.minLength(2),
           ]),
         }),
       ]),
