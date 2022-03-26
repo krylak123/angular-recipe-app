@@ -10,6 +10,7 @@
   &__label,
   &__input,
   &__textarea {
+    position: relative;
     width: 100%;
   }
 
@@ -41,6 +42,16 @@
     height: 200px;
   }
 
+  &__error-mess {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #f00;
+    text-shadow: 0 0 1px #000;
+    z-index: 1;
+  }
+
   &__btn {
     margin: 10px auto;
     padding: 10px 40px;
@@ -69,6 +80,11 @@
 
     &--add {
       width: 50%;
+    }
+
+    &:disabled {
+      background-color: #123;
+      cursor: not-allowed;
     }
   }
 
@@ -128,4 +144,8 @@
       }
     }
   }
+}
+
+.error {
+  box-shadow: inset 0 0 5px 0 #f00;
 }

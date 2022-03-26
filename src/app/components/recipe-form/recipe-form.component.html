@@ -1,37 +1,103 @@
 <form class="form" [formGroup]="form" (ngSubmit)="handleOnSubmit()">
   <label class="form__label">
-    <input class="form__input" type="text" placeholder="Nazwa przepisu . . ." formControlName="name">
+    <p
+      class="form__error-mess"
+      *ngIf="form.controls['name'].touched && form.controls['name'].errors"
+    >
+      Min. 3 znaki
+    </p>
+    <input
+      class="form__input"
+      type="text"
+      placeholder="Nazwa przepisu . . ."
+      formControlName="name"
+      [ngClass]="{
+        error: form.controls['name'].touched && form.controls['name'].errors
+      }"
+    />
   </label>
 
   <label class="form__label">
-    <textarea class="form__textarea" placeholder="Sposób przygotowania . . ." formControlName="description"></textarea>
+    <p
+      class="form__error-mess"
+      *ngIf="
+        form.controls['description'].touched &&
+        form.controls['description'].errors
+      "
+    >
+      Min. 10 znaków
+    </p>
+    <textarea
+      class="form__textarea"
+      placeholder="Sposób przygotowania . . ."
+      formControlName="description"
+      [ngClass]="{
+        error:
+          form.controls['description'].touched &&
+          form.controls['description'].errors
+      }"
+    ></textarea>
   </label>
 
-  <button class="form__btn form__btn--add" type="button" (click)="addIngredient()">Dodaj kolejny składnik</button>
+  <button
+    class="form__btn form__btn--add"
+    type="button"
+    (click)="addIngredient()"
+  >
+    Dodaj kolejny składnik
+  </button>
   <div formArrayName="ingredients">
     <div *ngFor="let ingredient of ingredientsControls; let idx = index">
       <div [formGroup]="ingredient" class="form__ingredient-container">
         <label class="form__label form__label--ingr">
-          <input class="form__input" type="text" placeholder="Nazwa składnika" formControlName="nameOfIngredient">
+          <input
+            class="form__input"
+            type="text"
+            placeholder="Nazwa składnika"
+            formControlName="nameOfIngredient"
+          />
         </label>
 
         <label class="form__label form__label--ingr">
-          <input class="form__input" type="text" placeholder="Ilość" formControlName="amountOfIngredient">
+          <input
+            class="form__input"
+            type="text"
+            placeholder="Ilość"
+            formControlName="amountOfIngredient"
+          />
         </label>
 
-        <button class="form__btn form__btn--delete" type="button"
-          (click)="removeIngredient(ingredientsFormArray,idx)">X</button>
+        <button
+          class="form__btn form__btn--delete"
+          type="button"
+          (click)="removeIngredient(ingredientsFormArray, idx)"
+        >
+          X
+        </button>
       </div>
     </div>
   </div>
 
-  <button class="form__btn form__btn--submit" type="button" (click)="handleOnOpenModal()">Dodaj przepis</button>
+  <button
+    class="form__btn form__btn--submit"
+    type="button"
+    [disabled]="form.invalid"
+    (click)="handleOnOpenModal()"
+  >
+    Dodaj przepis
+  </button>
 
   <dialog class="form__modal-container" [open]="isModalOpen">
     <div class="form__modal">
       <h1 class="form__title">Oceń przepis</h1>
       <div class="form__rating"></div>
-      <button class="form__btn form__btn--submit" type="submit">Dodaj przepis</button>
+      <button
+        class="form__btn form__btn--submit"
+        type="submit"
+        [disabled]="form.invalid"
+      >
+        Dodaj przepis
+      </button>
     </div>
   </dialog>
 </form>
