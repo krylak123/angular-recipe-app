@@ -8,6 +8,7 @@ import { RecipeFormService } from 'src/app/services/recipe-form.service';
   styleUrls: ['./recipe-form.component.scss'],
 })
 export class RecipeFormComponent implements OnInit {
+  public ratingOptions: number[] = [5, 4, 3, 2, 1];
   public isModalOpen: boolean = false;
   public form!: FormGroup;
 
@@ -47,6 +48,9 @@ export class RecipeFormComponent implements OnInit {
       return;
     }
 
+    this.form.controls['rating'].addValidators([Validators.required]);
+    this.form.controls['rating'].updateValueAndValidity();
+
     this.isModalOpen = true;
   }
 
@@ -59,6 +63,8 @@ export class RecipeFormComponent implements OnInit {
       return;
     }
 
+    // SEND TO API
     console.log(this.form.valid, this.form.value);
+    this.form.reset();
   }
 }

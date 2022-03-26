@@ -17,6 +17,7 @@ export class RecipeFormService {
         Validators.required,
         Validators.minLength(10),
       ]),
+      rating: this.formBuild.control(''),
       ingredients: this.formBuild.array([
         this.formBuild.group({
           nameOfIngredient: this.formBuild.control('', [

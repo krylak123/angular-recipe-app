@@ -81,7 +81,7 @@
   <button
     class="form__btn form__btn--submit"
     type="button"
-    [disabled]="form.invalid"
+    [disabled]="!isModalOpen && form.invalid"
     (click)="handleOnOpenModal()"
   >
     Dodaj przepis
@@ -90,12 +90,17 @@
   <dialog class="form__modal-container" [open]="isModalOpen">
     <div class="form__modal">
       <h1 class="form__title">Oceń przepis</h1>
-      <div class="form__rating"></div>
-      <button
-        class="form__btn form__btn--submit"
-        type="submit"
-        [disabled]="form.invalid"
-      >
+      <label class="form__rating">
+        <input
+          *ngFor="let rating of ratingOptions"
+          type="radio"
+          class="form__star"
+          formControlName="rating"
+          name="rating"
+          [value]="rating"
+        />
+      </label>
+      <button class="form__btn" type="submit" [disabled]="form.invalid">
         Dodaj przepis
       </button>
     </div>
