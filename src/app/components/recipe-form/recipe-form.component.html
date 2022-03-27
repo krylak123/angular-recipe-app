@@ -50,20 +50,48 @@
     <div *ngFor="let ingredient of ingredientsControls; let idx = index">
       <div [formGroup]="ingredient" class="form__ingredient-container">
         <label class="form__label form__label--ingr">
+          <p
+            class="form__error-mess"
+            *ngIf="
+              ingredient.controls['name'].touched &&
+              ingredient.controls['name'].errors
+            "
+          >
+            Min. 3 znaków
+          </p>
           <input
             class="form__input"
             type="text"
             placeholder="Nazwa składnika"
             formControlName="name"
+            [ngClass]="{
+              error:
+                ingredient.controls['name'].touched &&
+                ingredient.controls['name'].errors
+            }"
           />
         </label>
 
         <label class="form__label form__label--ingr">
+          <p
+            class="form__error-mess"
+            *ngIf="
+              ingredient.controls['value'].touched &&
+              ingredient.controls['value'].errors
+            "
+          >
+            Min. 2 znaków
+          </p>
           <input
             class="form__input"
             type="text"
             placeholder="Ilość"
             formControlName="value"
+            [ngClass]="{
+              error:
+                ingredient.controls['value'].touched &&
+                ingredient.controls['value'].errors
+            }"
           />
         </label>
 

@@ -32,8 +32,14 @@ export class RecipeFormComponent implements OnInit {
   public addIngredient() {
     this.ingredientsFormArray.push(
       new FormGroup({
-        name: this.formBuild.control('', [Validators.required]),
-        value: this.formBuild.control('', [Validators.required]),
+        name: this.formBuild.control('', [
+          Validators.required,
+          Validators.minLength(3),
+        ]),
+        value: this.formBuild.control('', [
+          Validators.required,
+          Validators.minLength(2),
+        ]),
       })
     );
   }
