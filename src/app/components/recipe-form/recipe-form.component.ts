@@ -13,7 +13,7 @@ export class RecipeFormComponent implements OnInit {
   public form!: FormGroup;
 
   get ingredientsFormArray() {
-    return this.form.controls['ingredients'] as FormArray;
+    return this.form.controls['ingriedients'] as FormArray;
   }
 
   get ingredientsControls() {
@@ -32,8 +32,8 @@ export class RecipeFormComponent implements OnInit {
   public addIngredient() {
     this.ingredientsFormArray.push(
       new FormGroup({
-        nameOfIngredient: this.formBuild.control('', [Validators.required]),
-        amountOfIngredient: this.formBuild.control('', [Validators.required]),
+        name: this.formBuild.control('', [Validators.required]),
+        value: this.formBuild.control('', [Validators.required]),
       })
     );
   }

@@ -17,19 +17,19 @@ export class RecipeFormService {
         Validators.required,
         Validators.minLength(10),
       ]),
-      rating: this.formBuild.control(''),
-      ingredients: this.formBuild.array([
+      ingriedients: this.formBuild.array([
         this.formBuild.group({
-          nameOfIngredient: this.formBuild.control('', [
+          name: this.formBuild.control('', [
             Validators.required,
             Validators.minLength(3),
           ]),
-          amountOfIngredient: this.formBuild.control('', [
+          value: this.formBuild.control('', [
             Validators.required,
             Validators.minLength(2),
           ]),
         }),
       ]),
+      rating: this.formBuild.control(''),
     });
 
     return form;
