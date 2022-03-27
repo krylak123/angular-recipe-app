@@ -25,16 +25,12 @@ export class SearchSortFormComponent implements AfterViewInit {
         map((e) => (e.target as HTMLSelectElement).value),
         filter((value) => value.length >= 3)
       )
-      .subscribe((value) => {
-        console.log(value);
-      });
+      .subscribe((value) => console.log(value));
   }
 
   public handleSortBy() {
     fromEvent(this.sortBy.nativeElement, 'change')
       .pipe(map((e) => (e.target as HTMLSelectElement).value))
-      .subscribe((value) => {
-        console.log(value);
-      });
+      .subscribe((value) => this.recipeApiService.getSortRecipes(value));
   }
 }
