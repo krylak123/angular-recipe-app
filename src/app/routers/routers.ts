@@ -3,6 +3,7 @@ import { RecipeDetailsComponent } from '../components/recipe-details/recipe-deta
 import { RecipeFormComponent } from '../components/recipe-form/recipe-form.component';
 import { LoginComponent } from '../layouts/login/login.component';
 import { MainComponent } from '../layouts/main/main.component';
+import { PageNotFoundComponent } from '../layouts/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
   {
@@ -30,6 +31,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'panel/form',
+    component: PageNotFoundComponent,
   },
 ];

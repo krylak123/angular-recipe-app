@@ -18,6 +18,7 @@ import { RecipeDetailsComponent } from './components/recipe-details/recipe-detai
 import { LoaderComponent } from './components/loader/loader.component';
 import { SearchSortFormComponent } from './components/search-sort-form/search-sort-form.component';
 import { LoginComponent } from './layouts/login/login.component';
+import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { LoginComponent } from './layouts/login/login.component';
     LoaderComponent,
     SearchSortFormComponent,
     LoginComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
