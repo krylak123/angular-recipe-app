@@ -17,6 +17,7 @@ import { RecipeFormComponent } from './components/recipe-form/recipe-form.compon
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { SearchSortFormComponent } from './components/search-sort-form/search-sort-form.component';
+import { LoginComponent } from './layouts/login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { SearchSortFormComponent } from './components/search-sort-form/search-so
     RecipeDetailsComponent,
     LoaderComponent,
     SearchSortFormComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
