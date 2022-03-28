@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { debounceTime, filter, fromEvent, map } from 'rxjs';
-import { RecipeApiService } from 'src/app/services/recipe-api.service';
+import { fromEvent } from 'rxjs';
+import { map, distinctUntilChanged, debounceTime } from 'rxjs/operators';
+import { RecipeService } from 'src/app/services/recipe.service';
 
 @Component({
   selector: 'app-search-sort-form',
@@ -11,7 +12,7 @@ export class SearchSortFormComponent implements AfterViewInit {
   @ViewChild('searchBy') public searchBy!: ElementRef<HTMLInputElement>;
   @ViewChild('sortBy') public sortBy!: ElementRef<HTMLSelectElement>;
 
-  constructor(private recipeApiService: RecipeApiService) {}
+  constructor(private recipeService: RecipeService) {}
 
   ngAfterViewInit(): void {
     this.handleSearchBy();
@@ -23,14 +24,15 @@ export class SearchSortFormComponent implements AfterViewInit {
       .pipe(
         debounceTime(500),
         map((e) => (e.target as HTMLSelectElement).value),
-        filter((value) => value.length >= 3)
+        map((value) => value.trim().toLowerCase()),
+        distinctUntilChanged()
       )
-      .subscribe((value) => console.log(value));
+      .subscribe((value) => this.recipeService.getRecipiesBySearch(value));
   }
 
   public handleSortBy() {
     fromEvent(this.sortBy.nativeElement, 'change')
       .pipe(map((e) => (e.target as HTMLSelectElement).value))
-      .subscribe((value) => this.recipeApiService.getSortRecipes(value));
+      .subscribe((value) => this.recipeService.getRecipesBySort(value));
   }
 }

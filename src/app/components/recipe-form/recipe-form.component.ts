@@ -12,6 +12,10 @@ export class RecipeFormComponent implements OnInit {
   public isModalOpen: boolean = false;
   public form!: FormGroup;
 
+  get descriptionValue() {
+    return this.form.controls['description'] as FormGroup;
+  }
+
   get ingredientsFormArray() {
     return this.form.controls['ingriedients'] as FormArray;
   }
@@ -68,6 +72,11 @@ export class RecipeFormComponent implements OnInit {
       console.error('niepoprawny formualarz');
       return;
     }
+
+    this.form.patchValue({
+      description: (this.descriptionValue.value as string).split('\n'),
+    });
+    // console.log((this.descriptionValue.value as string).split('\n'));
 
     // SEND TO API
     console.log(this.form.valid, this.form.value);
