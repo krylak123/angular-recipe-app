@@ -51,4 +51,8 @@ export class RecipeService {
       .getRecipesBySort(value)
       .subscribe((list) => this.updateRecipeList(list));
   }
+
+  public postRecipe(recipe: Recipe) {
+    this.recipeApiService.postRecipe(recipe).subscribe(() => this.getRecipes());
+  }
 }

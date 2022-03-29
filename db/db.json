@@ -44,6 +44,36 @@
         }
       ],
       "rating": 5
+    },
+    {
+      "name": "kanapeczki z pomidorkiem",
+      "description": [
+        "kanapeczkę smarujemy masełkiem",
+        "kroimy pomidorka na plasterki",
+        "kładziemy plasterek sera na kanapeczkę",
+        "na ser kładziemy 2-3 plasterki pomidorka",
+        "smacznego"
+      ],
+      "ingriedients": [
+        {
+          "name": "kanapeczka",
+          "value": "2 plasty"
+        },
+        {
+          "name": "masełko",
+          "value": "wystarczająco"
+        },
+        {
+          "name": "ser żółty",
+          "value": "2 plastry"
+        },
+        {
+          "name": "pomidorek",
+          "value": "1 sztuka"
+        }
+      ],
+      "rating": 5,
+      "id": 3
     }
   ],
   "users": []

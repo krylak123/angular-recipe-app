@@ -37,4 +37,8 @@ export class RecipeApiService {
       return this.http.get<Recipe[]>(`${this.API_URL}`);
     }
   }
+
+  public postRecipe(recipe: Recipe) {
+    return this.http.post<Recipe>(`${this.API_URL}`, recipe);
+  }
 }

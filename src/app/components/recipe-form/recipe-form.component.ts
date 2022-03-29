@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RecipeFormService } from 'src/app/services/recipe-form.service';
+import { RecipeService } from 'src/app/services/recipe.service';
 
 @Component({
   selector: 'app-recipe-form',
@@ -26,7 +27,8 @@ export class RecipeFormComponent implements OnInit {
 
   constructor(
     private formBuild: FormBuilder,
-    private recipeFormService: RecipeFormService
+    private recipeFormService: RecipeFormService,
+    private recipeService: RecipeService
   ) {}
 
   ngOnInit() {
@@ -74,12 +76,10 @@ export class RecipeFormComponent implements OnInit {
     }
 
     this.form.patchValue({
-      description: (this.descriptionValue.value as string).split('\n'),
+      description: (this.descriptionValue.value as string).trim().split('\n'),
     });
-    // console.log((this.descriptionValue.value as string).split('\n'));
 
-    // SEND TO API
-    console.log(this.form.valid, this.form.value);
+    this.recipeService.postRecipe(this.form.value);
     this.form.reset();
   }
 }
