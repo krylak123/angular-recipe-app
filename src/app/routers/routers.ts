@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { RecipeDetailsComponent } from '../components/recipe-details/recipe-details.component';
 import { RecipeFormComponent } from '../components/recipe-form/recipe-form.component';
+import { AuthGuard } from '../guards/auth.guard';
 import { LoginComponent } from '../layouts/login/login.component';
 import { MainComponent } from '../layouts/main/main.component';
 import { PageNotFoundComponent } from '../layouts/page-not-found/page-not-found.component';
@@ -13,6 +14,7 @@ export const routes: Routes = [
   {
     path: 'panel',
     component: MainComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'form',
