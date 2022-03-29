@@ -1,9 +1,29 @@
 <section class="panel">
   <h1 class="panel__title">Przepiśnik</h1>
   <h2 class="panel__subtitle">Zaloguj się</h2>
-  <form class="panel__form">
-    <input type="text" class="panel__input" />
-    <input type="password" class="panel__input" />
-    <button class="panel__btn">Zaloguj się</button>
+  <form class="panel__form" [formGroup]="form" (ngSubmit)="handleOnSubmit()">
+    <input
+      type="text"
+      class="panel__input"
+      formControlName="login"
+      [ngClass]="{
+        'panel__input--error':
+          form.controls['login'].touched && form.controls['login'].errors
+      }"
+    />
+    <input
+      type="password"
+      class="panel__input"
+      formControlName="password"
+      [ngClass]="{
+        'panel__input--error':
+          form.controls['password'].touched && form.controls['password'].errors
+      }"
+    />
+    <button class="panel__btn" type="submit">Zaloguj się</button>
   </form>
+  <p class="panel__text">
+    Nie masz konta?
+    <button class="panel__text panel__text--btn">Zarejestruj się</button>
+  </p>
 </section>
