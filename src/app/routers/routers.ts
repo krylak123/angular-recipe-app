@@ -19,6 +19,10 @@ export const routes: Routes = [
         component: RecipeFormComponent,
       },
       {
+        path: 'details',
+        redirectTo: 'form',
+      },
+      {
         path: 'details/:id',
         component: RecipeDetailsComponent,
       },
