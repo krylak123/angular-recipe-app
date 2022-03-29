@@ -76,5 +76,18 @@
       "id": 3
     }
   ],
-  "users": []
+  "users": [
+    {
+      "id": 1,
+      "role": "author",
+      "email": "author@przepisnik.pl",
+      "password": "jesteSuper123"
+    },
+    {
+      "id": 2,
+      "role": "user",
+      "email": "user@przepisnik.pl",
+      "password": "jesteSuper123"
+    }
+  ]
 }
