@@ -13,6 +13,10 @@ export class RecipeFormComponent implements OnInit {
   public isModalOpen: boolean = false;
   public form!: FormGroup;
 
+  get nameValue() {
+    return this.form.controls['name'] as FormGroup;
+  }
+
   get descriptionValue() {
     return this.form.controls['description'] as FormGroup;
   }
@@ -76,7 +80,11 @@ export class RecipeFormComponent implements OnInit {
     }
 
     this.form.patchValue({
-      description: (this.descriptionValue.value as string).trim().split('\n'),
+      name: (this.nameValue.value as string).trim().toLowerCase(),
+      description: (this.descriptionValue.value as string)
+        .trim()
+        .toLowerCase()
+        .split('\n'),
     });
 
     this.recipeService.postRecipe(this.form.value);

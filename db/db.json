@@ -74,6 +74,81 @@
       ],
       "rating": 5,
       "id": 3
+    },
+    {
+      "name": "naleśniki",
+      "description": [
+        "Mąkę wsypać do miski",
+        "dodać jajka, mleko, wodę i sól",
+        "zmiksować na gładkie ciasto",
+        "dodać olej i zmiksować ponownie",
+        "patelnie rozgrzać",
+        "smażyć naleśniki"
+      ],
+      "ingriedients": [
+        {
+          "name": "miska",
+          "value": "1 sztuka"
+        },
+        {
+          "name": "jaja",
+          "value": "2 sztuki"
+        },
+        {
+          "name": "mąka przenna",
+          "value": "1 szklanka"
+        },
+        {
+          "name": "woda gazowana",
+          "value": "3/4 szklanki"
+        },
+        {
+          "name": "olej roślinny",
+          "value": "3 łyżki"
+        },
+        {
+          "name": "mleko",
+          "value": "1 szklanka"
+        }
+      ],
+      "rating": 5,
+      "id": 4
+    },
+    {
+      "name": "kotlety wegańskie",
+      "description": [
+        "szkoda szczępić ryja",
+        "na kotlety wegańskie",
+        "lepiej zrób schabowe"
+      ],
+      "ingriedients": [
+        {
+          "name": "minimalna godność",
+          "value": "1 sztuka"
+        }
+      ],
+      "rating": 3,
+      "id": 5
+    },
+    {
+      "name": "tosty",
+      "description": [
+        "tost do tostera",
+        "poczekać aż wyskoczy",
+        "smacznego"
+      ],
+      "ingriedients": [
+        {
+          "name": "chleb tostowy",
+          "value": "2 sztuki"
+        },
+        {
+          "name": "toster",
+          "value": "1 sztuka"
+        }
+      ],
+      "rating": 2,
+      "id": 6
     }
   ],
   "users": [
