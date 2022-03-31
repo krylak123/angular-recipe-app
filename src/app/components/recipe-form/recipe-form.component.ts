@@ -84,7 +84,8 @@ export class RecipeFormComponent implements OnInit {
       description: (this.descriptionValue.value as string)
         .trim()
         .toLowerCase()
-        .split('\n'),
+        .split('\n')
+        .filter((item) => item !== ''),
     });
 
     this.recipeService.postRecipe(this.form.value);
