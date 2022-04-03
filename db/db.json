@@ -23,7 +23,8 @@
           "value": "150g"
         }
       ],
-      "rating": 4
+      "rating": 4,
+      "authorID": 1
     },
     {
       "id": 2,
@@ -43,7 +44,8 @@
           "value": "łyżeczka"
         }
       ],
-      "rating": 5
+      "rating": 5,
+      "authorID": 1
     },
     {
       "name": "kanapeczki z pomidorkiem",
@@ -73,7 +75,8 @@
         }
       ],
       "rating": 5,
-      "id": 3
+      "id": 3,
+      "authorID": 1
     },
     {
       "name": "naleśniki",
@@ -112,7 +115,8 @@
         }
       ],
       "rating": 5,
-      "id": 4
+      "id": 4,
+      "authorID": 3
     },
     {
       "name": "kotlety wegańskie",
@@ -128,7 +132,8 @@
         }
       ],
       "rating": 3,
-      "id": 5
+      "id": 5,
+      "authorID": 3
     },
     {
       "name": "tosty",
@@ -148,7 +153,8 @@
         }
       ],
       "rating": 2,
-      "id": 6
+      "id": 6,
+      "authorID": 3
     }
   ],
   "users": [
@@ -162,6 +168,12 @@
       "id": 2,
       "role": "user",
       "email": "user@przepisnik.pl",
+      "password": "jesteSuper123"
+    },
+    {
+      "id": 3,
+      "role": "author",
+      "email": "author1@przepisnik.pl",
       "password": "jesteSuper123"
     }
   ]

@@ -20,7 +20,9 @@
           form.controls['password'].touched && form.controls['password'].errors
       }"
     />
-    <button class="panel__btn" type="submit">Zaloguj się</button>
+    <button class="panel__btn" type="submit">
+      Zaloguj się<span *ngIf="isLoading" class="panel__loader"></span>
+    </button>
   </form>
   <p class="panel__text">
     Nie masz konta?
