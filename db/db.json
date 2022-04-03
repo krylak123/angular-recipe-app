@@ -155,6 +155,30 @@
       "rating": 2,
       "id": 6,
       "authorID": 3
+    },
+    {
+      "name": "kanapka z nutella",
+      "description": [
+        "kanapke smarujemy nutella",
+        "smacznego"
+      ],
+      "ingriedients": [
+        {
+          "name": "chleb",
+          "value": "2 sztuki"
+        },
+        {
+          "name": "nutella",
+          "value": "1 słoik"
+        },
+        {
+          "name": "noż",
+          "value": "1 sztuka"
+        }
+      ],
+      "rating": 5,
+      "authorID": 3,
+      "id": 7
     }
   ],
   "users": [
