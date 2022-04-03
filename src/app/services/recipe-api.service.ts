@@ -18,6 +18,10 @@ export class RecipeApiService {
     return this.http.get<Recipe[]>(`${this.API_URL}`);
   }
 
+  public getAuthorRecipes(id: number) {
+    return this.http.get<Recipe[]>(`${this.API_URL}?authorID=${id}`);
+  }
+
   public getRecipesbySearch(value: string) {
     return this.http.get<Recipe[]>(`${this.API_URL}?name_like=${value}`);
   }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { Role } from '../enums/role.enum';
+import { User } from './user.service';
 
 @Injectable({
   providedIn: 'root',
@@ -23,8 +23,8 @@ export class AuthService {
     this.authorized.next(value);
   }
 
-  public login(role: Role) {
-    localStorage.setItem('isLogged', JSON.stringify({ role }));
+  public login(user: User) {
+    localStorage.setItem('isLogged', JSON.stringify(user));
     this.updateAuthorized(true);
     this.router.navigate(['panel', 'form']);
   }

@@ -5,7 +5,7 @@
 
 <app-container class="formPanel">
   <nav class="menu">
-    <li class="menu__item">
+    <li *ngIf="isFormOptionVisible" class="menu__item">
       <a
         class="menu__link"
         routerLink="form"

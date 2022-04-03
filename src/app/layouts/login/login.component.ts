@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { map } from 'rxjs';
-import { Role } from 'src/app/enums/role.enum';
 import { AuthService } from 'src/app/services/auth.service';
 import { LoginFormService } from 'src/app/services/login-form.service';
 import { UserService } from 'src/app/services/user.service';
@@ -42,10 +41,7 @@ export class LoginComponent implements OnInit {
         this.isLoading = false;
 
         if (item) {
-          const role = item.role === 'user' ? Role.User : Role.Author;
-
-          this.userService.updateUser(item);
-          this.authService.login(role);
+          this.authService.login(item);
         } else {
           alert('podany uzytkownik nie istnieje');
         }

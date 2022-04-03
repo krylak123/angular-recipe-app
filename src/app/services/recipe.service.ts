@@ -40,6 +40,12 @@ export class RecipeService {
       .subscribe((list) => this.updateRecipeList(list));
   }
 
+  public getAuthorRecipes(id: number) {
+    this.recipeApiService
+      .getAuthorRecipes(id)
+      .subscribe((list) => this.updateRecipeList(list));
+  }
+
   public getRecipiesBySearch(value: string) {
     this.recipeApiService
       .getRecipesbySearch(value)
