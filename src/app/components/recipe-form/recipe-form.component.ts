@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RecipeFormService } from 'src/app/services/recipe-form.service';
 import { RecipeService } from 'src/app/services/recipe.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-recipe-form',
@@ -12,6 +13,7 @@ export class RecipeFormComponent implements OnInit {
   public ratingOptions: number[] = [5, 4, 3, 2, 1];
   public isModalOpen: boolean = false;
   public form!: FormGroup;
+  public authorID!: number | undefined;
 
   get nameValue() {
     return this.form.controls['name'] as FormGroup;
@@ -32,8 +34,11 @@ export class RecipeFormComponent implements OnInit {
   constructor(
     private formBuild: FormBuilder,
     private recipeFormService: RecipeFormService,
-    private recipeService: RecipeService
-  ) {}
+    private recipeService: RecipeService,
+    private userService: UserService
+  ) {
+    this.userService.user$.subscribe((item) => (this.authorID = item?.id));
+  }
 
   ngOnInit() {
     this.form = this.recipeFormService.createForm();
@@ -88,7 +93,7 @@ export class RecipeFormComponent implements OnInit {
         .filter((item) => item !== ''),
     });
 
-    this.recipeService.postRecipe(this.form.value);
+    this.recipeService.postRecipe(this.form.value, this.authorID!);
     this.form.reset();
   }
 }

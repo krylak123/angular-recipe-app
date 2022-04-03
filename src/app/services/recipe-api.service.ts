@@ -42,7 +42,7 @@ export class RecipeApiService {
     }
   }
 
-  public postRecipe(recipe: Recipe) {
-    return this.http.post<Recipe>(`${this.API_URL}`, recipe);
+  public postRecipe(recipe: Recipe, authorID: number) {
+    return this.http.post<Recipe>(`${this.API_URL}`, { ...recipe, authorID });
   }
 }

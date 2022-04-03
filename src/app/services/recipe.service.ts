@@ -58,7 +58,9 @@ export class RecipeService {
       .subscribe((list) => this.updateRecipeList(list));
   }
 
-  public postRecipe(recipe: Recipe) {
-    this.recipeApiService.postRecipe(recipe).subscribe(() => this.getRecipes());
+  public postRecipe(recipe: Recipe, authorID: number) {
+    this.recipeApiService
+      .postRecipe(recipe, authorID)
+      .subscribe(() => this.getAuthorRecipes(authorID));
   }
 }
