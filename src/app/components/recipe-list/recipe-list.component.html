@@ -1,9 +1,9 @@
-<app-loader *ngIf="!recipesList.length"></app-loader>
+<app-loader *ngIf="!(recipesList | async)?.length"></app-loader>
 
 <button
   type="button"
   class="tile"
-  *ngFor="let recipe of recipesList"
+  *ngFor="let recipe of recipesList | async"
   [routerLink]="['details', recipe.id]"
 >
   <p class="tile__text">{{ recipe.name | uppercaseFirstLetter }}</p>

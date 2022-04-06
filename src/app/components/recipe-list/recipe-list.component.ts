@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -22,7 +22,7 @@ interface Ingredient {
   styleUrls: ['./recipe-list.component.scss'],
 })
 export class RecipeListComponent implements OnInit, OnDestroy {
-  public recipesList: Recipe[] = [];
+  public recipesList: Observable<Recipe[]> = this.recipeService.recipeList$;
   public subscription!: Subscription;
 
   constructor(
@@ -32,10 +32,6 @@ export class RecipeListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.recipeService.getRecipes();
-
-    this.recipeService.recipeList$.subscribe(
-      (list) => (this.recipesList = list)
-    );
 
     this.subscription = this.userService.user$.subscribe((item) => {
       if (item?.role === 'author') {
