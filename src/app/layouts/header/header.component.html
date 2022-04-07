@@ -1,4 +1,8 @@
 <h1 class="title">Przepiśnik</h1>
-<button *ngIf="isVisible" class="btn" (click)="handleOnLogoutClick()">
-  Wyloguj się
-</button>
+
+<ng-container *ngIf="isVisible$ | async">
+  <ng-container *ngIf="userName$ | async as name">
+    <p class="user">Cześć {{ name.email }}!</p>
+  </ng-container>
+  <button class="btn" (click)="handleOnLogoutClick()">Wyloguj się</button>
+</ng-container>
