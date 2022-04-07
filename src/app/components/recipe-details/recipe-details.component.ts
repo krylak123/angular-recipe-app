@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Recipe } from '../recipe-list/recipe-list.component';
 
@@ -9,8 +10,9 @@ import { Recipe } from '../recipe-list/recipe-list.component';
   styleUrls: ['./recipe-details.component.scss'],
 })
 export class RecipeDetailsComponent implements OnInit {
+  public recipe$: Observable<Recipe> = this.recipeService.recipe$;
   public recipeID: string = '';
-  public recipe!: Recipe;
+  // public recipe!: Recipe;
 
   constructor(
     private route: ActivatedRoute,
@@ -18,7 +20,7 @@ export class RecipeDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.recipeService.recipe$.subscribe((item) => (this.recipe = item));
+    // this.recipeService.recipe$.subscribe((item) => (this.recipe = item));
 
     this.route.params.subscribe((value) => {
       this.recipeID = value['id'];
