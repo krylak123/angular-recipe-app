@@ -19,6 +19,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { SearchSortFormComponent } from './components/search-sort-form/search-sort-form.component';
 import { LoginComponent } from './layouts/login/login.component';
 import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.component';
+import { MailNamePipe } from './pipes/mail-name.pipe';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.c
     SearchSortFormComponent,
     LoginComponent,
     PageNotFoundComponent,
+    MailNamePipe,
   ],
   imports: [
     BrowserModule,

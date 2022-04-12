@@ -2,7 +2,9 @@
 
 <ng-container *ngIf="isVisible$ | async">
   <ng-container *ngIf="userName$ | async as name">
-    <p class="user">Cześć {{ name.email }}!</p>
+    <p class="user">
+      Cześć<span class="user user--name">{{ name.email | mailName }}</span>
+    </p>
   </ng-container>
   <button class="btn" (click)="handleOnLogoutClick()">Wyloguj się</button>
 </ng-container>

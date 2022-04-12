@@ -66,4 +66,9 @@
   top: 50%;
   font-size: 2rem;
   transform: translateY(-50%);
+
+  &--name {
+    position: relative;
+    font-weight: bold;
+  }
 }
