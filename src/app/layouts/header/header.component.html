@@ -1,4 +1,4 @@
-<h1 class="title">Przepiśnik</h1>
+<h1 appTooltip [template]="tmpl" class="title">Przepiśnik</h1>
 
 <ng-container *ngIf="isVisible$ | async">
   <ng-container *ngIf="userName$ | async as name">
@@ -6,5 +6,13 @@
       Cześć<span class="user user--name">{{ name.email | mailName }}</span>
     </p>
   </ng-container>
-  <button class="btn" (click)="handleOnLogoutClick()">Wyloguj się</button>
+  <button appTooltip="logout" class="btn" (click)="handleOnLogoutClick()">
+    Wyloguj się
+  </button>
 </ng-container>
+
+<ng-template #tmpl>
+  <p>siemano z template</p>
+  <p>co tam jak tam wariacie</p>
+  <p>kurła naura</p>
+</ng-template>

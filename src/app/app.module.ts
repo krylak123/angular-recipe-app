@@ -20,6 +20,7 @@ import { SearchSortFormComponent } from './components/search-sort-form/search-so
 import { LoginComponent } from './layouts/login/login.component';
 import { PageNotFoundComponent } from './layouts/page-not-found/page-not-found.component';
 import { MailNamePipe } from './pipes/mail-name.pipe';
+import { TooltipDirective } from './directives/tooltip.directive';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { MailNamePipe } from './pipes/mail-name.pipe';
     LoginComponent,
     PageNotFoundComponent,
     MailNamePipe,
+    TooltipDirective,
   ],
   imports: [
     BrowserModule,
