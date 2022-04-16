@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Observable, switchMap, tap } from 'rxjs';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { Recipe } from '../recipe-list/recipe-list.component';
 
@@ -12,7 +12,6 @@ import { Recipe } from '../recipe-list/recipe-list.component';
 export class RecipeDetailsComponent implements OnInit {
   public recipe$: Observable<Recipe> = this.recipeService.recipe$;
   public recipeID: string = '';
-  // public recipe!: Recipe;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,12 +19,16 @@ export class RecipeDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.recipeService.recipe$.subscribe((item) => (this.recipe = item));
+    // this.route.params.subscribe((value) => {
+    //   this.recipeID = value['id'];
 
-    this.route.params.subscribe((value) => {
-      this.recipeID = value['id'];
+    //   this.recipeService.getRecipe(this.recipeID);
+    // });
 
-      this.recipeService.getRecipe(this.recipeID);
-    });
+    this.route.params
+      .pipe(
+        switchMap(async (value) => this.recipeService.getRecipe(value['id']))
+      )
+      .subscribe();
   }
 }
